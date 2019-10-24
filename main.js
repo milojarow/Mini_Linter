@@ -9,3 +9,14 @@ console.log('The number of words are: ',storyWords.length);
 
 let betterWords=storyWords.filter(x=>!unnecessaryWords.includes(x));
 console.log(betterWords.join(' '));
+
+let arrayOfOverusedWords=betterWords.filter(x=>overusedWords.includes(x)); //creates array of all over used words in the text [really, basically, really...]
+let rea=[];
+let ver=[];
+let bas=[];
+let counter=[rea,ver,bas];
+let overusedWordsCop=overusedWords.forEach(word=>{ //the cop should storage the qty of $overusedWords repeated in $arrayOfOverusedWords
+      let i=overusedWords.indexOf(word);
+      counter[i]=arrayOfOverusedWords.filter(x=>x===overusedWords[i]?true:false);
+      console.log(overusedWords[i].toString(),': ',counter[i].length);
+});
