@@ -20,3 +20,9 @@ let overusedWordsCop=overusedWords.forEach(word=>{ //the cop should storage the 
       counter[i]=arrayOfOverusedWords.filter(x=>x===overusedWords[i]?true:false);
       console.log(overusedWords[i].toString(),': ',counter[i].length);
 });
+
+let sentenceCount=0;
+betterWords.forEach(x=>{
+  if(x[x.length-1]==='.'||x[x.length-1]==='!')sentenceCount+=1;
+});
+console.log('Sentences: ',sentenceCount);
