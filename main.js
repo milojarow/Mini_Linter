@@ -3,3 +3,5 @@ let story = 'Last weekend, I took literally the most beautiful bike ride of my l
 let overusedWords = ['really', 'very', 'basically'];
 
 let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+let storyWords=story.split(' ');
+console.log('The number of words are: ',storyWords.length);
