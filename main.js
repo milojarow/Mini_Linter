@@ -34,9 +34,9 @@ let basX=0;
 let counterX=[reaX,verX,basX];
 betterWords.reverse();
 overusedWords.forEach(word=>{
-  let i=overusedWords.indexOf(word);//iterdor word=0, word=1, word=2
+  let i=overusedWords.indexOf(word);//iterador word=0, word=1, word=2
   betterWords.forEach(x=>{
-    x===word && counterX[i]++;
+    x===word && counterX[i]++;//sum1 al contador de really, very y basically según $i
     if(x===word && counterX[i]>1)betterWords.splice(betterWords.indexOf(x),1)
   })
 });
@@ -58,3 +58,12 @@ for (i=0; i<betterWords.length; i++){
         n=0; //reset
       }
 console.log(`The word most repeated is "${itemMostRepeated}" (${m} times)`);
+
+let replaceWords=['terrific','thrilled','huge'];
+overusedWords.forEach(word=>{
+  let i=overusedWords.indexOf(word);//iterador i=0, i=1, i=2
+  betterWords.forEach(x=>{
+    x===overusedWords[i] && betterWords.splice(betterWords.indexOf(x),1,replaceWords[Math.floor(Math.random()*3)]);
+  });
+});
+console.log(betterWords.join(' '));
