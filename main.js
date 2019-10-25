@@ -43,3 +43,18 @@ overusedWords.forEach(word=>{
 betterWords.reverse();
 console.log(betterWords.join(' '));
 console.log('Words on last paragraph: ',betterWords.length);
+
+let m=1;//depósito del número más grande
+let n=0;//contador de palabras
+let itemMostRepeated;
+for (i=0; i<betterWords.length; i++){
+        for (j=0; j<betterWords.length; j++){
+                if (betterWords[i] == betterWords[j]) n++;
+                if (m<n){
+                  m=n;
+                  itemMostRepeated = betterWords[i];
+                }
+              }
+        n=0; //reset
+      }
+console.log(`The word most repeated is "${itemMostRepeated}" (${m} times)`);
